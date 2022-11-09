@@ -1,6 +1,6 @@
 <template>
     <section>
-
+        <button @click="handleSubmit">提交</button>
     </section>
 </template>
 
@@ -42,6 +42,20 @@ export default defineComponent({
         // 必须return + 修饰类型的值
         butterfly02(): String {
             return "么么哒";
+        },
+        //表单提交事件
+        async handleSubmit(v) {
+            try {
+                //提交表单
+                let params = {
+                    name: '',
+                    pageNum: 1,
+                    pageSize: 10
+                };
+                await saveOrUpdateDemo(params);
+            } finally {
+
+            }
         }
     }
 })
