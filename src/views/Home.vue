@@ -1,21 +1,38 @@
 <template>
   <div class="home">
+    <ul>
+        <li v-for="(item, index) in corn_list">
+            <router-link :to="item.path">{{item.name}}</router-link>
+        </li>
+    </ul>
     <Header></Header>
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   </div>
 </template>
 
 <script lang="ts">
+// 引入装饰器
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue';
 import Header from '@/components/Header.vue';
+
 
 @Options({
   components: {
-    HelloWorld,
     Header
   },
 })
-export default class Home extends Vue {}
+
+export default class Home extends Vue {
+    data () {
+        return {
+            corn_list: [
+                { name: "定义 Vue 组件", path: "/defineComponent"},
+                { name: "vuex", path: "/vuex"},
+                { name: "interface", path: "/interface"},
+                { name: "computed", path: "/computed"},
+                { name: "watch", path: "/watch"}
+            ]
+        }
+    }
+}
 </script>

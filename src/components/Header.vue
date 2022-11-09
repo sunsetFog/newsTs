@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import {
-  defineComponent,
+  defineComponent,// 定义 Vue 组件
   getCurrentInstance,// vue实例对象
   ref,// 类型声明，根据初始值推断类型
   computed,// 类型声明，计算值将根据返回值自动推断类型
