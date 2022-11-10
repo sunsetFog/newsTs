@@ -2,7 +2,7 @@
 import InRequest from './Axios';
 import { BASE_URL, TIME_OUT } from './config'; // 进行导入环境配置变量的使用；
 
-const inRequest= new InRequest({
+const defHttp= new InRequest({
   baseURL: BASE_URL, //
   timeout: TIME_OUT,
   interceptors: {
@@ -32,4 +32,4 @@ const inRequest= new InRequest({
   }
 });
 
-export default InRequest;
+export default defHttp;

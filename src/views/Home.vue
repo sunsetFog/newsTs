@@ -5,7 +5,7 @@
             <router-link :to="item.path">{{item.name}}</router-link>
         </li>
     </ul>
-    <Header></Header>
+    <el-button type="primary">Primary</el-button>
   </div>
 </template>
 
@@ -13,12 +13,11 @@
 // 引入装饰器
 import { Options, Vue } from 'vue-class-component';
 import HelloWorld from '@/components/HelloWorld.vue';
-import Header from '@/components/Header.vue';
 
 
 @Options({
   components: {
-    Header
+
   },
 })
 

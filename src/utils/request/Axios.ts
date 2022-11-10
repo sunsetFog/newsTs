@@ -1,4 +1,14 @@
-// 自定义InRequest请求类的定义
+
+/*
+自定义InRequest请求类的定义
+
+
+执行顺序
+1.import导入时，类实例化对象，触发构造器
+2.post类方法
+3.request类方法
+
+*/
 
 import axios from 'axios';
 import type { AxiosInstance } from 'axios'; // axios里面有对应的第三方库的类型
@@ -14,11 +24,13 @@ import { LoadingInstance } from 'element-plus/lib/components/loading/src/loading
 const DEAFULT_LOADING = true; // 默认是否显示load
 // 自定义导出的类 - InRequest
 class InRequest{
+  // axios 实例
   instance: AxiosInstance
-  interceptors?: InRequestInterceptors // 拦截器的可选
+  // 拦截器对象
+  interceptors?: InRequestInterceptors
   showLoading: boolean
   loading?: LoadingInstance
-
+  // 构造函数
   constructor(config: InRequestConfig) {
     // 创建axios实例 - 为了创建出来不同的实例
     this.instance = axios.create(config);
@@ -87,7 +99,7 @@ class InRequest{
       }
     )
   }
-
+  // 核心方法
   request<T>(config: InRequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       // 1.单个请求对请求config的处理

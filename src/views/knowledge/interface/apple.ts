@@ -1,4 +1,4 @@
-import InRequest from '@/utils/request/Axios';
+import InRequest from '@/utils/request';
 // 枚举-接口api
 enum Api {
     list = '/sky/shop/list',
@@ -18,5 +18,6 @@ enum Api {
  */
 export const saveOrUpdateDemo = (params) => {
     let url = Api.list;
+    console.log("--InRequest--"+JSON.stringify(InRequest));
     return InRequest.post({ url: url, params });
 };
