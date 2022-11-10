@@ -26,7 +26,7 @@ const DEAFULT_LOADING = true; // 默认是否显示load
 class InRequest{
   // axios 实例
   instance: AxiosInstance
-  // 拦截器对象
+  // 拦截器对象----感觉这里多余了
   interceptors?: InRequestInterceptors
   showLoading: boolean
   loading?: LoadingInstance
@@ -39,23 +39,23 @@ class InRequest{
     this.showLoading = config.showLoading ?? DEAFULT_LOADING
     this.interceptors = config.interceptors; // 拦截信息
 
-    // 使用拦截器
+    // 使用拦截器----感觉这里多余了
     // 1.从config中取出的拦截器是对应的实例的拦截器
     // 请求的拦截
-    this.instance.interceptors.request.use(
-      this.interceptors?.requestInterceptor,
-      this.interceptors?.requestInterceptorCatch
-    );
+    // this.instance.interceptors.request.use(
+    //   this.interceptors?.requestInterceptor,
+    //   this.interceptors?.requestInterceptorCatch
+    // );
     // 响应的拦截
-    this.instance.interceptors.response.use(
-      this.interceptors?.responseInterceptor,
-      this.interceptors?.responseInterceptorCatch
-    );
+    // this.instance.interceptors.response.use(
+    //   this.interceptors?.responseInterceptor,
+    //   this.interceptors?.responseInterceptorCatch
+    // );
 
     // 2.添加所有的实例都有的拦截器 - 请求拦截
     this.instance.interceptors.request.use(
       (config) => {
-        console.log('所有的实例都有的拦截器: 请求成功拦截');
+        console.log('所有的实例都有的拦截器: 请求成功拦截', config);
         // 是否添加loading的引用
         if (this.showLoading) {
           this.loading = ElLoading.service({
