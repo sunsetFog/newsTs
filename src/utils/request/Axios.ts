@@ -12,12 +12,10 @@
 
 import axios from 'axios';
 import type { AxiosInstance } from 'axios'; // axios里面有对应的第三方库的类型
-import type { InRequestInterceptors, InRequestConfig } from './type';
+import type { InRequestConfig } from './type';
 
 import { ElLoading } from 'element-plus'; // 进行导入element的loading的加载事件使用
 // loading的类型，会在安装的使用安装到文件中
-// import { ILoadingInstance } from 'element-plus/lib/el-loading/src/loading.type';
-// import { ILoadingInstance } from 'element-plus/lib/components/loading/src/loading.type'
 import { LoadingInstance } from 'element-plus/lib/components/loading/src/loading'
 
 
@@ -26,8 +24,6 @@ const DEAFULT_LOADING = true; // 默认是否显示load
 class InRequest{
   // axios 实例
   instance: AxiosInstance
-  // 拦截器对象----感觉这里多余了
-  interceptors?: InRequestInterceptors
   showLoading: boolean
   loading?: LoadingInstance
   // 构造函数
@@ -37,25 +33,12 @@ class InRequest{
 
     // 保存基本信息
     this.showLoading = config.showLoading ?? DEAFULT_LOADING
-    this.interceptors = config.interceptors; // 拦截信息
 
-    // 使用拦截器----感觉这里多余了
-    // 1.从config中取出的拦截器是对应的实例的拦截器
-    // 请求的拦截
-    // this.instance.interceptors.request.use(
-    //   this.interceptors?.requestInterceptor,
-    //   this.interceptors?.requestInterceptorCatch
-    // );
-    // 响应的拦截
-    // this.instance.interceptors.response.use(
-    //   this.interceptors?.responseInterceptor,
-    //   this.interceptors?.responseInterceptorCatch
-    // );
 
-    // 2.添加所有的实例都有的拦截器 - 请求拦截
+    // 拦截器 - 请求拦截
     this.instance.interceptors.request.use(
       (config) => {
-        console.log('所有的实例都有的拦截器: 请求成功拦截', config);
+        console.log('拦截器: 请求成功拦截', config);
         // 是否添加loading的引用
         if (this.showLoading) {
           this.loading = ElLoading.service({
@@ -67,14 +50,14 @@ class InRequest{
         return config;
       },
       (err) => {
-        console.log('所有的实例都有的拦截器: 请求失败拦截');
+        console.log('拦截器: 请求失败拦截');
         return err;
       }
     )
-    // 添加所有的实例都有的拦截器 - 响应拦截
+    // 拦截器 - 响应拦截
     this.instance.interceptors.response.use(
       (res) => {
-        console.log('所有的实例都有的拦截器: 响应成功拦截')
+        console.log('拦截器: 响应成功拦截')
 
         // 将loading移除
         this.loading?.close();
