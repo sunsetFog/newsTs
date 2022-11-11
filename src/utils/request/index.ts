@@ -4,11 +4,10 @@
   service统一出口
 */
 import InRequest from './Axios';
-import { BASE_URL, TIME_OUT } from './config'; // 进行导入环境配置变量的使用；
 
 const defHttp= new InRequest({
-  baseURL: BASE_URL, //
-  timeout: TIME_OUT
+  baseURL: process.env.VUE_APP_BASE_URL, // http访问域名
+  timeout: 10000 // 超时设置
 });
 
 export default defHttp;

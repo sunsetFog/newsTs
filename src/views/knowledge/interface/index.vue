@@ -14,7 +14,7 @@ import {
 import { saveOrUpdateDemo } from "./apple"
 
 /*
-问号表示可选的属性
+问号表示可选的属性, 既是可以缺少这个属性
  */
 interface Book {
   title: string
@@ -35,6 +35,8 @@ export default defineComponent({
         this.beanWay({ title: '嘿嘿嘿', year: 2023 });
         let obj = { tile: '看看'};
         this.dragonfly();
+
+        console.log("--环境变量--", process.env)
     },
     methods: {
         beanWay(value: Book) {// 接口修饰形参，传进来是接口的对象
