@@ -45,7 +45,7 @@ export default defineComponent({
             let Peach: Book = { title: '可可', year: 2025 };
             console.log("桃子", Peach);
         },
-        // 默认值
+        // 对象类型、默认值是空对象
         dragonfly(value: Object = {}) {
             console.log("=dragonfly=", value);
         },
