@@ -10,8 +10,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "/defineComponent",
         name: "defineComponent",
-        component: () =>
-          import("../views/defineComponent/defineComponent/index.vue"),
+        component: () => import("../views/defineComponent/demo1/index.vue"),
       },
       {
         path: "/vuex",
@@ -27,6 +26,11 @@ const routes: Array<RouteRecordRaw> = [
         path: "/watch",
         name: "watch",
         component: () => import("../views/defineComponent/watch/index.vue"),
+      },
+      {
+        path: "/fatherAndSon1",
+        name: "fatherAndSon1",
+        component: () => import("../views/defineComponent/fatherAndSon/father.vue"),
       },
 
       {
@@ -44,6 +48,11 @@ const routes: Array<RouteRecordRaw> = [
         path: "/refUnit",
         name: "refUnit",
         component: () => import("../views/setup/refUnit/index.vue"),
+      },
+      {
+        path: "/fatherAndSon2",
+        name: "fatherAndSon2",
+        component: () => import("../views/setup/fatherAndSon/father.vue"),
       },
     ],
   },

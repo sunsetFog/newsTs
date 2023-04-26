@@ -51,7 +51,7 @@ export default defineComponent({
       return payload.bookName.length > 0
     }
   },
-  setup(props) {// 是data
+  data(props) {// 是data
     console.log("props参数："+props.message);
 
     let count = ref(100);
