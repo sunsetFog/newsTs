@@ -19,7 +19,7 @@ import {
 
 export default defineComponent({
     name: "zidingyizujian",
-    setup() {// 是data
+    data() {// 是data
 
         let count = ref(100)
         console.log("---ref(0)---", count, "---", count.value)
@@ -28,18 +28,23 @@ export default defineComponent({
 
         return {
             count,
-            doubleCount
+            doubleCount,
+            message: 'Hello'
         }
+    },
+    created() {
+        console.log("--data--this--", this)
+        console.log("--computed--otherCount--", this.otherCount)
     },
     methods: {
         numChange() {
             this.count++;
         }
     },
+    // 为计算属性标记类型
     computed: {
-        otherCount() {
-            // return this.count + 5;报错
-            return 5;
+        otherCount(): number {// 没有返回值类型 报错Property 'XXXX' does not exist on type 'ComponentPublicInstance
+            return this.count + 5;
         }
     }
 })

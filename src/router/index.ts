@@ -1,59 +1,62 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import Home from "../views/Home.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'Home',
+    path: "/",
+    name: "Home",
     component: Home,
     children: [
       {
-        path: '/defineComponent',
-        name: 'defineComponent',
-        component: () => import('../views/knowledge/defineComponent/index.vue')
+        path: "/defineComponent",
+        name: "defineComponent",
+        component: () =>
+          import("../views/defineComponent/defineComponent/index.vue"),
       },
       {
-        path: '/vuex',
-        name: 'vuex',
-        component: () => import('../views/knowledge/vuex/index.vue')
+        path: "/vuex",
+        name: "vuex",
+        component: () => import("../views/defineComponent/vuex/index.vue"),
       },
       {
-        path: '/interface',
-        name: 'interface',
-        component: () => import('../views/knowledge/interface/index.vue')
+        path: "/computed",
+        name: "computed",
+        component: () => import("../views/defineComponent/computed/index.vue"),
       },
       {
-        path: '/computed',
-        name: 'computed',
-        component: () => import('../views/knowledge/computed/index.vue')
+        path: "/watch",
+        name: "watch",
+        component: () => import("../views/defineComponent/watch/index.vue"),
+      },
+
+      {
+        path: "/interface",
+        name: "interface",
+        component: () => import("../views/typescript/interface/index.vue"),
+      },
+
+      {
+        path: "/link",
+        name: "link",
+        component: () => import("../views/setup/jump/index.vue"),
       },
       {
-        path: '/watch',
-        name: 'watch',
-        component: () => import('../views/knowledge/watch/index.vue')
+        path: "/refUnit",
+        name: "refUnit",
+        component: () => import("../views/setup/refUnit/index.vue"),
       },
-      {
-        path: '/link',
-        name: 'link',
-        component: () => import('../views/knowledge/jump/index.vue')
-      },
-      {
-        path: '/refUnit',
-        name: 'refUnit',
-        component: () => import('../views/knowledge/refUnit/index.vue')
-      },
-    ]
+    ],
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
+    path: "/about",
+    name: "About",
+    component: () => import("../views/About.vue"),
   },
-]
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
