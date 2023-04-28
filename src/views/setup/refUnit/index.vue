@@ -1,9 +1,6 @@
 <template>
     <section>
-        <button @click="waterWay">{{ keyword }}--{{ msg }}</button>
-        <div v-for="(item, index) in labels">
-          ++{{ item }}++
-        </div>
+        <button @click="waterWay">{{ keyword }}</button>
     </section>
 </template>
 <!-- 
@@ -34,31 +31,16 @@ const double2 = computed<number>(() => {
   return 2
 })
 
-// prors默认值
-const props = withDefaults(
-  defineProps<{// 这对象可以写成interface
-    msg: string,
-    labels: string[]
-  }>(),
-  { msg: 'Hello World!', labels: ['one'] }
-);
-console.log("--props--", props.labels);
-
-
-const emit = defineEmits<{
-  (event: 'click', count: number): void;
-}>();
-
-
-const slots = useSlots();
-const attributes = useAttrs()
-
 
 
 
 function waterWay() {
     console.log("--关键字-2-", keyword)
+    
     keyword.value = '大白菜'
+    nextTick(() => {
+      console.log("等待下一次 DOM 更新完才执行DOM操作")
+    })
 }
 
 </script>

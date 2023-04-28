@@ -1,7 +1,7 @@
 import InRequest from '@/utils/request';
 // 枚举-接口api
 enum Api {
-    list = '/sky/shop/list',
+    list = 'http://geek.itheima.net/v1_0/channels',
     save = '/test/jeecgDemo/add',
     edit = '/test/jeecgDemo/edit',
     get = '/test/jeecgDemo/queryById',
@@ -17,7 +17,5 @@ enum Api {
  * @param params
  */
 export const saveOrUpdateDemo = (params) => {
-    let url = Api.list;
-    console.log("--InRequest--"+JSON.stringify(InRequest));
-    return InRequest.post({ url: url, params });
+    return InRequest.get({ url: Api.list, params });
 };

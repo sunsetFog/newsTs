@@ -19,7 +19,7 @@ import {
 
 export default defineComponent({
     name: "zidingyizujian",
-    data() {// 是data
+    setup() {
 
         let count = ref(100)
         console.log("---ref(0)---", count, "---", count.value)

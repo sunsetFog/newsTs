@@ -19,7 +19,6 @@
   interface Book {
     title: string
     author: string
-    year: number
   }
   export default defineComponent({
     name: "son1",
@@ -40,10 +39,10 @@
         default: () => ({
           title: 'Arrow Function Expression'
         }),
-        validator: (book: Book) => !!book.title
+        // validator: (book: Book) => !!book.title
       },
       // 也可以标记函数
-      callback: Function as PropType<(id: number) => void>
+      grass: Function as PropType<(id: number) => void>
     },
     // emits 标注类型
     emits: {
@@ -52,7 +51,7 @@
         return payload.bookName.length > 0
       }
     },
-    data(props) {
+    setup(props) {
       console.log("子props参数：", JSON.stringify(props, null, 4));
   
       return {

@@ -3,7 +3,7 @@
       ---父组件---
       <br/><br/><br />
 
-      <son msg="哈喽" :labels="['鸭子']" @addBook="waterWay">
+      <son msg="哈喽" :labels="['鸭子']" @addBook="waterWay" other="别的">
         <template #default>
           <button>
             默认插槽
@@ -29,10 +29,6 @@ import type { Ref } from 'vue'
 
 import Son from './son.vue'
 
-
-
-// const slots = useSlots();
-// const attributes = useAttrs()
 
 
 

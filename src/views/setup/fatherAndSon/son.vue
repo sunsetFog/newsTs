@@ -2,6 +2,8 @@
     <section>
       ---子组件---
         <br/><br/>
+        使用props: {{ msg }}
+        <br/><br/>
         <button @click="emitWay">提交emit</button>
         <br/><br/>
         <slot></slot>
@@ -14,7 +16,7 @@ import { computed, nextTick, ref, shallowRef, watch, withDefaults, defineEmits, 
 import type { Ref } from 'vue'
 
 
-// prors默认值
+// prors指定类型和默认值
 const props = withDefaults(
   defineProps<{// <>里的对象可以写成interface
     msg: string,
@@ -31,10 +33,11 @@ const $emit = defineEmits<{
 
 
 const slots = useSlots();
-console.log("--slots--", slots, "---只是用来if判断---", slots.yahoo ? true : false);
+console.log("--slots--", slots, "---只是用来v-if判断---", slots.yahoo ? true : false);
 
-
+// props中未定义的属性
 const attributes = useAttrs()
+console.log("--attributes--", attributes)
 
 
 

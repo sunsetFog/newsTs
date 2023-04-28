@@ -53,16 +53,16 @@
 } from '@element-plus/icons-vue'
   import { mapMutations, mapGetters, mapActions } from 'vuex';
   import {
-  defineComponent,// 定义 Vue 组件
-  ref,// 类型声明，根据初始值推断类型
-  computed,// 类型声明，计算值将根据返回值自动推断类型
+  defineComponent,
+  ref,
+  computed,
 } from "vue";
 
-import { useRouter } from 'vue-router';
 
   export default defineComponent({
       name: 'menuDesign',
-      setup() {
+      components: { Location },
+      data() {
           return {
             unique_opened: true
           };
@@ -99,9 +99,6 @@ import { useRouter } from 'vue-router';
                     //   this.$store.commit('menuOfValue', item.key);
                       // 跳转
                       this.$router.push({ path: item.path });
-                        const router = useRouter()
-                        console.log("--useRouter--", router)
-                        // router.push({ path: item.path });
                       break;
                   }
   
