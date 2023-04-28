@@ -24,7 +24,7 @@
               <!-- el-menu-item的index绑定是@open事件的参数 -->
               <el-sub-menu :index="'sign'+index">
                   <template #title>
-                        <el-icon><location /></el-icon>
+                        <el-icon><IconMenu /></el-icon>
                       <span>{{item.title}}</span>
                   </template>
                   <el-menu-item-group>
@@ -61,7 +61,7 @@
 
   export default defineComponent({
       name: 'menuDesign',
-      components: { Location },
+      components: { Location, IconMenu },
       data() {
           return {
             unique_opened: true

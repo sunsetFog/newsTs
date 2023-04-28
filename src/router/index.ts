@@ -54,6 +54,16 @@ const routes: Array<RouteRecordRaw> = [
         name: "fatherAndSon2",
         component: () => import("../views/setup/fatherAndSon/father.vue"),
       },
+      {
+        path: "/vueClass",
+        name: "vueClass",
+        component: () => import("../views/vueClass/demo1/index.vue"),
+      },
+      {
+        path: "/fatherAndSon3",
+        name: "fatherAndSon3",
+        component: () => import("../views/vueClass/fatherAndSon/father.vue"),
+      },
     ],
   },
   {
