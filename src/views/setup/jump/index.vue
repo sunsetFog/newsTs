@@ -10,7 +10,7 @@ const router = useRouter();
 
 
 function waterWay() {
-    router.push('/interface');
+    router.push('/interface?title=黄瓜');
 }
 
 </script>

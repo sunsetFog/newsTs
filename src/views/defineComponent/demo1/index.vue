@@ -10,8 +10,8 @@
     </section>
 </template>
 <!-- 
-<script lang="ts">就加入typescript语法，比如interface等等    $router跳转就不能用了，打印this里没有该变量了
-<script> 也能用defineComponent、$router跳转
+可选<script lang="ts"> 加入typescript语法，比如interface等等    this里没有$router等变量，不能用$router跳转
+可选<script> 也能用defineComponent      this里有$router等变量，能用$router跳转
 
 vue3之defineComponent官方文档：
 https://cn.vuejs.org/api/general.html#definecomponent
@@ -68,7 +68,7 @@ export default defineComponent({
     methods: {
         waterWay() {
             console.log("-waterWay-", this);
-            this.use_router.push('/interface');
+            this.use_router.push('/interface?title=白菜');
         },
         numChange() {
             this.count++;

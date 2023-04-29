@@ -13,6 +13,8 @@ import {
 
 import { saveOrUpdateDemo } from "./services"
 
+import { useRoute } from 'vue-router';
+
 interface Book {
     readonly title: string // 只读属性，创建的值不能修改
     year?: number // 问号表示可选的属性, 既是可以缺少这个属性
@@ -23,8 +25,9 @@ interface Book {
 
 export default defineComponent({
     name: "interface-demo",
-    data() {
-
+    setup() {
+        const use_route = useRoute();
+        console.log("--路由参数--", use_route.params, "---", use_route.query);
         return {
             cucumber: {} as Book // 默认值 as 指定类型
         }
