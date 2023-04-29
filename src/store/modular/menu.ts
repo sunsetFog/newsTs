@@ -3,23 +3,22 @@ export default {
     state: {
         menuList: [
             { path: "", key: lodash.uniqueId('menu-'), title: '选项式组件defineComponent', children: [
-                { path: "/defineComponent", key: lodash.uniqueId('menu-'), title: 'demo1', children: [] },
+                { path: "/defineComponent_demo1", key: lodash.uniqueId('menu-'), title: 'demo1', children: [] },
                 { path: "/vuex", key: lodash.uniqueId('menu-'), title: 'vuex', children: [] },
-                { path: "/computed", key: lodash.uniqueId('menu-'), title: 'computed', children: [] },
-                { path: "/watch", key: lodash.uniqueId('menu-'), title: 'watch', children: [] },
                 { path: "/fatherAndSon1", key: lodash.uniqueId('menu-'), title: '父子通讯', children: [] },
             ]},
             { path: "", key: lodash.uniqueId('menu-'), title: 'typescript指定类型', children: [
                 { path: "/interface", key: lodash.uniqueId('menu-'), title: 'interface', children: [] },
             ]},
             { path: "", key: lodash.uniqueId('menu-'), title: '组合式组件<script setup>', children: [
-                { path: "/refUnit", key: lodash.uniqueId('menu-'), title: '数据', children: [] },
+                { path: "/setup_demo1", key: lodash.uniqueId('menu-'), title: 'demo1', children: [] },
                 { path: "/link", key: lodash.uniqueId('menu-'), title: '路由跳转', children: [] },
                 { path: "/fatherAndSon2", key: lodash.uniqueId('menu-'), title: '父子通讯', children: [] },
             ]},
             { path: "", key: lodash.uniqueId('menu-'), title: 'vue类组件', children: [
-                { path: "/vueClass", key: lodash.uniqueId('menu-'), title: 'vueClass', children: [] },
+                { path: "/vueClass_demo1", key: lodash.uniqueId('menu-'), title: 'demo1', children: [] },
                 { path: "/fatherAndSon3", key: lodash.uniqueId('menu-'), title: '父子通讯', children: [] },
+                { path: "/mixins", key: lodash.uniqueId('menu-'), title: 'mixins混入', children: [] },
             ]},
         ],
         menu_value: null

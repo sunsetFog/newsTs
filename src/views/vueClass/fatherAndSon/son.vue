@@ -2,7 +2,7 @@
     <section>
         ---子组件---
         <br/><br/>
-        {{ whoopee }}
+        props数据: {{ whoopee }}
     </section>
 </template>
 
@@ -26,17 +26,6 @@ export default class SkyUnit extends Vue {
     }
     mounted() {
         console.log("渲染完成", this)
-    }
-    // 方法
-    skyWay() {
-
-    }
-    get waterComputed() {
-        console.log("--this--", this)
-        return this.message + '!!!'
-    }
-    set waterComputed(value) {
-        
     }
 }
 </script>

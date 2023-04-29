@@ -29,4 +29,4 @@ npm create vite@latest
 
 # 项目技术
 
-vue3、typescript、elementPlus
+vue3、typescript、elementPlus、vue-class-component

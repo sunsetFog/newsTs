@@ -23,7 +23,6 @@
 </template>
 
 <script lang="ts">
-// 引入装饰器
 import { Options, Vue } from 'vue-class-component';
 import menuDesign from '@/components/menuDesign.vue';
 

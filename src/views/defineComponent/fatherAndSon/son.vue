@@ -1,17 +1,19 @@
 <template>
     <section>
-        ---子组件---{{ message }}
+        ---子组件---
         <br/><br/>
-        <button @click="emitWay">提交emit</button>
+        props数据：{{ message }}
+        <br/><br/>
+        <button @click="emitWay">子传父--提交emit</button>
     </section>
   </template>
   
   <script lang="ts">
   import {
-    defineComponent, // 定义 Vue 组件
-    ref, // 类型声明，根据初始值推断类型
-    computed, // 类型声明，计算值将根据返回值自动推断类型
-    reactive, // 类型声明，可以使用接口
+    defineComponent,
+    ref,
+    computed,
+    reactive,
     watch
   } from "vue";
   import type { PropType } from 'vue'// 使用 PropType 这个工具类型来标记更复杂的 props 类型

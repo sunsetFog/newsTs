@@ -8,8 +8,8 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
     children: [
       {
-        path: "/defineComponent",
-        name: "defineComponent",
+        path: "/defineComponent_demo1",
+        name: "defineComponent_demo1",
         component: () => import("../views/defineComponent/demo1/index.vue"),
       },
       {
@@ -18,19 +18,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("../views/defineComponent/vuex/index.vue"),
       },
       {
-        path: "/computed",
-        name: "computed",
-        component: () => import("../views/defineComponent/computed/index.vue"),
-      },
-      {
-        path: "/watch",
-        name: "watch",
-        component: () => import("../views/defineComponent/watch/index.vue"),
-      },
-      {
         path: "/fatherAndSon1",
         name: "fatherAndSon1",
-        component: () => import("../views/defineComponent/fatherAndSon/father.vue"),
+        component: () =>
+          import("../views/defineComponent/fatherAndSon/father.vue"),
       },
 
       {
@@ -45,9 +36,9 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("../views/setup/jump/index.vue"),
       },
       {
-        path: "/refUnit",
-        name: "refUnit",
-        component: () => import("../views/setup/refUnit/index.vue"),
+        path: "/setup_demo1",
+        name: "setup_demo1",
+        component: () => import("../views/setup/demo1/index.vue"),
       },
       {
         path: "/fatherAndSon2",
@@ -55,8 +46,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("../views/setup/fatherAndSon/father.vue"),
       },
       {
-        path: "/vueClass",
-        name: "vueClass",
+        path: "/vueClass_demo1",
+        name: "vueClass_demo1",
         component: () => import("../views/vueClass/demo1/index.vue"),
       },
       {
@@ -64,12 +55,12 @@ const routes: Array<RouteRecordRaw> = [
         name: "fatherAndSon3",
         component: () => import("../views/vueClass/fatherAndSon/father.vue"),
       },
+      {
+        path: "/mixins",
+        name: "mixins",
+        component: () => import("../views/vueClass/mixins/index.vue"),
+      },
     ],
-  },
-  {
-    path: "/about",
-    name: "About",
-    component: () => import("../views/About.vue"),
   },
 ];
 

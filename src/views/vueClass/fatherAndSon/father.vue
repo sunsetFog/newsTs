@@ -27,17 +27,8 @@ export default class SkyUnit extends Vue {
     mounted() {
         console.log("渲染完成", this)
     }
-    // 方法
-    skyWay() {
 
-    }
-    get waterComputed() {
-        console.log("--this--", this)
-        return this.message + '!!!'
-    }
-    set waterComputed(value) {
-        
-    }
+
 }
 </script>
 

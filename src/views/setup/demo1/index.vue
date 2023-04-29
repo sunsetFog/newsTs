@@ -4,7 +4,7 @@
     </section>
 </template>
 <!-- 
-    script加上setup无需向模板返回任何组件、变量或函数
+    script加上setup无需向模板export default返回任何组件、变量或函数
  -->
 <script lang="ts" setup>
 import { computed, nextTick, ref, shallowRef, watch, withDefaults, defineEmits, useSlots, useAttrs, reactive } from 'vue';

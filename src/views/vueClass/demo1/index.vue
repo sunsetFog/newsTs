@@ -12,21 +12,25 @@
     官方文档：https://class-component.vuejs.org/
 LiILLl
     yarn add --save vue vue-class-component
+
+    和react一样，可以用类继承封装公用方法和属性
  -->
 <script lang="ts">
-import Component, { Options, Vue } from 'vue-class-component';
+import { Options, Vue } from 'vue-class-component';
 
-
+// 装饰器
 @Options({
 
 })
-
 export default class SkyUnit extends Vue {
     message = "哈喽"
     data() {
         return {
             water: "水"
         }
+    }
+    created() {
+        console.log("初始化数据", this)
     }
     mounted() {
         console.log("渲染完成", this)
@@ -35,6 +39,7 @@ export default class SkyUnit extends Vue {
     skyWay() {
 
     }
+    // computed
     get waterComputed() {
         console.log("--this--", this)
         return this.message + '!!!'

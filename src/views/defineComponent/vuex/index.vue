@@ -10,8 +10,9 @@
 import {
   defineComponent,// 定义 Vue 组件
   getCurrentInstance,// vue实例对象
-  computed,// 类型声明，计算值将根据返回值自动推断类型
+  computed,
 } from "vue";
+
 // 引入vuex
 import { mapGetters, useStore } from "vuex"
 
