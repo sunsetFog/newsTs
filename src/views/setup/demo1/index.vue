@@ -7,7 +7,7 @@
     可选<script setup> 无需向模板export default返回任何组件、变量或函数
  -->
 <script lang="ts" setup>
-import { computed, nextTick, ref, shallowRef, watch, withDefaults, defineEmits, useSlots, useAttrs, reactive } from 'vue';
+import { computed, nextTick, ref, shallowRef, watch, withDefaults, defineEmits, useSlots, useAttrs, reactive, getCurrentInstance } from 'vue';
 import type { Ref } from 'vue'
 
 // 标注类型  ref会根据初始化时的值推导其类型  Ref<string>
@@ -31,6 +31,8 @@ const double2 = computed<number>(() => {
   return 2
 })
 
+const that = getCurrentInstance()
+console.log("--vue的this--", that);
 
 
 

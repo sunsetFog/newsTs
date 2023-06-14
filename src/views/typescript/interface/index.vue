@@ -16,12 +16,14 @@ import { saveOrUpdateDemo } from "./services"
 import { useRoute } from 'vue-router';
 
 interface Book {
-    readonly title: string // 只读属性，创建的值不能修改
+    readonly title: string | number // 只读属性，创建的值不能修改    可以字符串或数字类型
     year?: number // 问号表示可选的属性, 既是可以缺少这个属性
     list: number[] // 表示由此类型元素组成的一个数组    方式二：数组泛型 Array<number>
     grass(source: string, subString: string): boolean // 函数类型   返回值是boolean类型
+    phoneWay: (option: boolean) => void // 函数类型
     [random: string]: any // key随机字符串，value是任意类型
 }
+
 
 export default defineComponent({
     name: "interface-demo",
@@ -33,12 +35,16 @@ export default defineComponent({
         }
     },
     created() {
+        // 要传入的对象
         let params = {
             title: 'Vue 3 Guide',
             year: 2022,
             list: [6],
             grass: function (source: string, subString: string) {
                 return true
+            },
+            phoneWay: function (option: boolean) {
+                return
             },
             other: '别的呢'
         }
@@ -51,6 +57,7 @@ export default defineComponent({
         this.dragonfly({ tile: '看看' });
 
         console.log("--环境变量--", process.env)
+
     },
     methods: {
         beanWay(value: Book) {// 指定形参对象类型
