@@ -14,6 +14,8 @@ import {
 import { saveOrUpdateDemo } from "./services"
 
 import { useRoute } from 'vue-router';
+// const basketRef = useRef<any>('basket');
+// const basketRef = useRef('basket') as any;
 
 interface Book {
     readonly title: string | number // 只读属性，创建的值不能修改    可以字符串或数字类型
@@ -57,6 +59,10 @@ export default defineComponent({
         this.dragonfly({ tile: '看看' });
 
         console.log("--环境变量--", process.env)
+        // 函数类型
+        let water: Function = () => {
+
+        }
 
     },
     methods: {
